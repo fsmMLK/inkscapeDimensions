@@ -83,11 +83,11 @@ This extension is presented in five tabs, **Linear**, **Angular**, **Arrows**, *
 
 ### Linear
 
-<img src="docs/images/Tab_linear.png" width="600px"/>
+<img src="docs/images/Tab_linear.png" width="500px"/>
 
 **Direction:** You can select the direction of linear dimension annotation (see below)
 
-<img src="docs/images/LIN_types.png" width="300px"/>
+<img src="docs/images/LIN_types.png" width="250px"/>
 
 **Invert side:** Place the annotation in the other side of the selected segment
 
@@ -125,7 +125,7 @@ This extension is presented in five tabs, **Linear**, **Angular**, **Arrows**, *
 
 ### Angular
 
-<img src="docs/images/Tab_angular.png" width="600px"/>
+<img src="docs/images/Tab_angular.png" width="500px"/>
 
 **Position:** You can select the position of the angular annotation (see below).
 
@@ -159,7 +159,7 @@ This extension is presented in five tabs, **Linear**, **Angular**, **Arrows**, *
 
 **Unit:** If you select `Type > Dimension`, this option adds unit to the dimension value. This option will just add the unit and will NOT scale the value. The option rad(multiple of pi) will write the angle as a fraction of pi (see image below)
 
-<img src="docs/images/ANG_units.png" width="450px"/>
+<img src="docs/images/ANG_units.png" width="500px"/>
 
 **Digits of precision:**  If you select `Type > Dimension`, you can adjust the number of decimals to be used. See Linear tab section for examples.
 
@@ -167,7 +167,7 @@ This extension is presented in five tabs, **Linear**, **Angular**, **Arrows**, *
 
 ### Arrows
 
-<img src="docs/images/Tab_arrow.png" width="600px"/>
+<img src="docs/images/Tab_arrow.png" width="500px"/>
 
 **Scale factor:** Scaling factor. This parameter does not affect the other dimension annotations.
 
@@ -178,7 +178,7 @@ This extension is presented in five tabs, **Linear**, **Angular**, **Arrows**, *
 
 ### Configuration
 
-<img src="docs/images/Tab_configuration.png" width="600px"/>
+<img src="docs/images/Tab_configuration.png" width="500px"/>
 
 **Use LaTeX:** (de)activates LaTeX support.
 
@@ -188,7 +188,7 @@ This extension is presented in five tabs, **Linear**, **Angular**, **Arrows**, *
 
 **Default proportions:** If selected, the proportions between the elements of the dimension annotations follows the default proportions. See figure below. If selected, the other parameters below it will be ignored.
 
-<img src="docs/images/Config_sizes.png" width="600px"/>
+<img src="docs/images/Config_sizes.png" width="700px"/>
 
 **Line width proportion, Arrow size proportion, Aux. line offset proportion, Aux. line extension proportion, Text offset proportion, Dimension distance proportion:** Change the proportions of the annotation. They affect the outcome only if `Default proportions` is NOT selected.
 
@@ -197,7 +197,7 @@ This extension is presented in five tabs, **Linear**, **Angular**, **Arrows**, *
 
 ### Colors
 
-<img src="docs/images/Tab_colors.png" width="600px"/>
+<img src="docs/images/Tab_colors.png" width="500px"/>
 
 This tab is divided in two sections. The first controls the color of the text, the second controls the color of the lines.
 
