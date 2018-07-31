@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inkscape-extension xmlns="http://www.inkscape.org/namespace/inkscape/extension">
+  <_name>Dimensions</_name>
+  <id>fsmMLK.Dimensions</id>
+  <dependency type="executable" location="extensions">dimensions.py</dependency>
+  <dependency type="executable" location="extensions">inkscapeMadeEasy_Base.py</dependency>
+  <dependency type="executable" location="extensions">inkscapeMadeEasy_Draw.py</dependency>
+  <dependency type="executable" location="extensions">inkex.py</dependency>
+    <param name="tab" type="notebook">
+        <page name="Linear" appearance="minimal" _gui-text="Linear">
+          
+          <param name="LINdirection" type="optiongroup" appearance="minimal" _gui-text="Direction:">
+              <_option value="horizontal">Horizontal</_option>
+              <_option value="vertical">Vertical</_option>
+              <_option value="parallel">Parallel</_option>
+          </param>
+          <param name="LINinvertSide"      type="boolean" _gui-text="Invert side">False</param>
+          <param name="LINinvertTextSide"      type="boolean" _gui-text="Invert text side">False</param>
+          <param name="LINhorizontalText"      type="boolean" _gui-text="Keep text horizontal">False</param>
+          <param name="LINsmalDimStyle"      type="boolean" _gui-text="Small dimension style">False</param>
+          
+          <param name="desc1" type="description" appearance="header">Contents</param>
+          <param name="LINcontentsType" type="optiongroup" appearance="minimal" _gui-text="Type:">
+              <_option value="dimension">Dimension</_option>
+              <_option value="custom">Custom</_option>
+          </param>
+
+          <param name="LINunit" type="optiongroup" appearance="minimal" _gui-text="Unit:">
+              <_option value="none">None</_option>
+              <_option value="mm">mm</_option>
+              <_option value="cm">cm</_option>
+              <_option value="m">m</_option>
+              <_option value="in">in</_option>
+              <_option value="ft">ft</_option>
+          </param>
+          <param name="LINscaleDim" type="float" min="0.01"    max="100" precision="2"   _gui-text="Dimension scale factor (default: 1.0)">1.0</param>
+          <param name="LINprecision"    type="int"   min="0"   max="5"    _gui-text="Digits of precision:">0</param>
+          <param name="LINcustomContent" type="string"  _gui-text="Custom contents (only if 'Type>custom'):">value</param>
+        </page>
+        
+        <page name="Angular" appearance="minimal" _gui-text="Angular">
+          <param name="ANGdimPosition" type="optiongroup" appearance="minimal" _gui-text="Position:">
+              <_option value="interior">Interior</_option>
+              <_option value="exterior">Exterior</_option>
+          </param>
+          <param name="ANGannotationDistance"  type="int" min="0" max="100" _gui-text="Annotation distance in % (only if 'Position>Interior')">50</param>
+          <param name="ANGmarkCenter"      type="boolean" _gui-text="Add center mark">False</param>
+          <param name="ANGinvertAngle"      type="boolean" _gui-text="Explementary angle">False</param>
+          <param name="ANGinvertTextSide"      type="boolean" _gui-text="Invert text side">False</param>
+          <param name="ANGhorizontalText"      type="boolean" _gui-text="Keep text horizontal">False</param>
+          <param name="ANGsmalDimStyle"      type="boolean" _gui-text="Small dimension style">False</param>
+          
+          <param name="desc2" type="description" appearance="header">Contents</param>
+          <param name="ANGcontentsType" type="optiongroup" appearance="minimal" _gui-text="Type:">
+              <_option value="dimension">Dimension</_option>
+              <_option value="custom">Custom</_option>
+          </param>
+          <param name="ANGunit" type="optiongroup" appearance="minimal" _gui-text="Unit:">
+              <_option value="rad">rad</_option>
+              <_option value="radPi">rad (mutiple of pi)</_option>
+              <_option value="deg">deg</_option>
+          </param>
+          <param name="ANGprecision"    type="int"   min="0"   max="5"    _gui-text="Digits of precision:">0</param>
+          <param name="ANGcustomContent" type="string"  _gui-text="Custom contents (only if 'Type>custom'):">value</param>
+        </page>
+
+        <page name="Arrow" appearance="minimal" _gui-text="Arrows">
+          <param name="anotationScale" type="float" min="0.01"    max="100" precision="2"   _gui-text="Scale factor (default: 1.0)">1.0</param>
+          <param name="anotationText" type="string"  _gui-text="Contents">value</param>
+          <_param name="instructions" type="description" xml:space="preserve">
+Tip: Use \\ to break lines
+          </_param>
+        </page>
+        
+        <page name="Config" appearance="minimal" _gui-text="Configuration">
+          <param name="useLatex"      type="boolean" _gui-text="Use LaTeX:">False</param>
+          <param name="removeAuxLine"      type="boolean" _gui-text="Remove auxiliary line:">False</param>
+          
+          <param name="desc1" type="description" appearance="header">Dimensions</param>
+          <param name="fontSize" type="float" min="1"    max="50" precision="1"   _gui-text="Font size  (default: 2.5)">10</param>
+          <param name="useDefaultProp"    type="boolean" _gui-text="Default proportions (ignore next options)">True</param>
+          
+          <param name="lineWidthProp" type="float" min="0.1"    max="10" precision="1"   _gui-text="Line width proportion (default: 1.0)">1.0</param>
+          <param name="arrowSizeProp" type="float" min="0.1"    max="10" precision="1"   _gui-text="Arrow size proportion (default: 1.0)">1.0</param>
+          <param name="auxLineOffsetProp" type="float" min="0.1"    max="10" precision="1"   _gui-text="Aux. line offset proportion (default: 1.0)">1.0</param>
+          <param name="auxLineExtensionProp" type="float" min="0.1"    max="10" precision="1"   _gui-text="Aux. line extension proportion (default: 1.0)">1.0</param>
+          <param name="textOffsetProp" type="float" min="0.1"    max="10" precision="1"   _gui-text="Text offset proportion (default: 1.0)">1.0</param>
+          <param name="dimSpacingProp" type="float" min="0.1"    max="10" precision="1"   _gui-text="Dimension distance proportion (default: 1.0)">1.0</param>
+        </page>
+        <page name="Colors" appearance="minimal" _gui-text="Colors">
+            <param name="textColor" type="optiongroup" appearance="minimal" _gui-text="Text color:">
+                <_option value="black">black</_option>
+                <_option value="none">none</_option>
+                <_option value="red">red</_option>
+                <_option value="blue">blue</_option>
+                <_option value="yellow">yellow</_option>
+                <_option value="green">green</_option>
+                <_option value="magen">magenta</_option>
+                <_option value="white">white</_option>
+                <_option value="Lred">Lred</_option>
+                <_option value="Lblue">Lblue</_option>
+                <_option value="Lyellow">Lyellow</_option>
+                <_option value="Lgreen">Lgreen</_option>
+                <_option value="Lmagen">Lmagenta</_option>
+                <_option value="Dred">Dred</_option>
+                <_option value="Dblue">Dblue</_option>
+                <_option value="Dyellow">Dyellow</_option>
+                <_option value="Dgreen">Dgreen</_option>
+                <_option value="Dmagen">Dmagenta</_option>
+                <_option value="picker">use color picker</_option>
+            </param>
+            <param name="colorPickerText" type="color"></param>
+            
+            <param name="lineColor" type="optiongroup" appearance="minimal" _gui-text="Line color:">
+                <_option value="black">black</_option>
+                <_option value="none">none</_option>
+                <_option value="red">red</_option>
+                <_option value="blue">blue</_option>
+                <_option value="yellow">yellow</_option>
+                <_option value="green">green</_option>
+                <_option value="magen">magenta</_option>
+                <_option value="white">white</_option>
+                <_option value="Lred">Lred</_option>
+                <_option value="Lblue">Lblue</_option>
+                <_option value="Lyellow">Lyellow</_option>
+                <_option value="Lgreen">Lgreen</_option>
+                <_option value="Lmagen">Lmagenta</_option>
+                <_option value="Dred">Dred</_option>
+                <_option value="Dblue">Dblue</_option>
+                <_option value="Dyellow">Dyellow</_option>
+                <_option value="Dgreen">Dgreen</_option>
+                <_option value="Dmagen">Dmagenta</_option>
+                <_option value="picker">use color picker</_option>
+            </param>
+            <param name="colorPickerLine" type="color"></param>
+        </page>
+        <page name="Help" _gui-text="Help">
+            <_param name="instructions" type="description" xml:space="preserve">
+Help here:
+https://github.com/fsmMLK/inkscapeDimensions
+            </_param>
+        </page>
+    </param>
+    <effect>
+        <object-type>all</object-type>
+        <effects-menu>
+            <submenu _name="fsmMLK"/>
+        </effects-menu>
+    </effect>
+    <script>
+      <command reldir="extensions" interpreter="python">dimensions.py</command>
+    </script>
+</inkscape-extension>
+
