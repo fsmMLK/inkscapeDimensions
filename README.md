@@ -129,7 +129,7 @@ This extension is presented in five tabs, **Linear**, **Angular**, **Arrows**, *
 
 **Position:** You can select the position of the angular annotation (see below).
 
-<img src="docs/images/ANG_positions.png" width="400px"/>
+<img src="docs/images/ANG_positions.png" width="370px"/>
 
 **Annotation distance in %:** Sets the distance where the angle annotation is drawn, in percentage. This option is used only if `Position > Interior`
 
@@ -137,7 +137,7 @@ This extension is presented in five tabs, **Linear**, **Angular**, **Arrows**, *
 
 **Add center mark:** Marks the center of the angle with a cross.
 
-<img src="docs/images/ANG_mark_center.png" width="400px"/>
+<img src="docs/images/ANG_mark_center.png" width="370px"/>
 
 **Explementary angle:** annotates the explementary angle, that is, the angle that completes 360 degrees. If this option is not selected, the selected angle will always be the smallest.
 
