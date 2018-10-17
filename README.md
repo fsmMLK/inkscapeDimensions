@@ -62,7 +62,7 @@ This extension is presented in five tabs, **Linear**, **Angular**, **Arrows**, *
 
    In order to create linear annotations, you must create an auxiliary line, select this line and apply the extension as presented in the figure below. **Attention: the line segment must be composed by 2 vertices only**. You can select multiple lines, but the same parameters will be applied to all.
 
-<img src="docs/images/Linear_usage_steps.png" width="400px"/>
+<img src="docs/images/Linear_usage_steps.png" width="600px"/>
 
 
     
@@ -73,7 +73,7 @@ This extension is presented in five tabs, **Linear**, **Angular**, **Arrows**, *
    - If you select a line with 3 vertices, the angle will be defined such that the second vertex is the center.
    - If you select a line with 4 vertices, the angle will be defined by the segments 1-2 and 3-4.
     
-<img src="docs/images/Angular_usage_steps.png" width="400px"/>
+<img src="docs/images/Angular_usage_steps.png" width="600px"/>
 
   3- If `Arrows` tab is on top, then the extension is set to draw annotation arrows
 
@@ -83,7 +83,7 @@ This extension is presented in five tabs, **Linear**, **Angular**, **Arrows**, *
    - The second vertex determines the text anchor position
    - The third vertex defines the end of the horizontal line
     
-<img src="docs/images/Annotation_usage_steps.png" width="400px"/>
+<img src="docs/images/Annotation_usage_steps.png" width="600px"/>
 
 ### Linear
 
