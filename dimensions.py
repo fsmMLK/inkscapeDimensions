@@ -84,7 +84,7 @@ def rotateVector(vector,theta):
 #---------------------------------------------
 class Dimensions(inkBase.inkscapeMadeEasy):
   def __init__(self):
-    inkex.Effect.__init__(self)
+    inkBase.inkscapeMadeEasy.__init__(self)
     
     self.OptionParser.add_option("--tab",action="store", type="string",dest="tab", default="object") 
     
@@ -140,6 +140,8 @@ class Dimensions(inkBase.inkscapeMadeEasy):
     so = self.options
     so.tab = so.tab.replace('"','')   # removes de exceding double quotes from the string
     
+    self.documentUnit = self.getDocumentUnit()
+    
     #root_layer = self.current_layer
     root_layer = self.document.getroot()    
     
@@ -155,24 +157,25 @@ class Dimensions(inkBase.inkscapeMadeEasy):
       inkDraw.useLatex=so.useLatex
        
     self.fontSize=so.fontSize
+    
     if not so.useLatex:
       self.textStyle = inkDraw.textStyle.setSimpleColor(self.fontSize/0.75,justification='center',textColor=self.textColor)
     
     #dim configuration. All sizes are related to the text height
     if so.useDefaultProp:
-      self.lineWidth = (so.fontSize/10.0)
-      self.arrowSize = (so.fontSize)
-      self.auxLineOffset = (so.fontSize/2.5)
-      self.auxLineExtension = (so.fontSize/2.5)
-      self.dimensionSpacing = (2.0*so.fontSize)
-      self.textOffset = (so.fontSize/2.5)  # offset between symbol and text
+      self.lineWidth = (self.fontSize/10.0)
+      self.arrowSize = (self.fontSize)
+      self.auxLineOffset = (self.fontSize/2.5)
+      self.auxLineExtension = (self.fontSize/2.5)
+      self.dimensionSpacing = (2.0*self.fontSize)
+      self.textOffset = (self.fontSize/2.5)  # offset between symbol and text
     else:
-      self.lineWidth = (so.fontSize/10.0)*so.lineWidthProp
-      self.arrowSize = (so.fontSize)*so.arrowSizeProp
-      self.auxLineOffset = (so.fontSize/2.5)*so.auxLineOffsetProp
-      self.auxLineExtension = (so.fontSize/2.5)*so.auxLineExtensionProp
-      self.dimensionSpacing = (2.0*so.fontSize)*so.dimSpacingProp
-      self.textOffset = (so.fontSize/2.5)*so.textOffsetProp  # offset between symbol and text
+      self.lineWidth = (self.fontSize/10.0)*so.lineWidthProp
+      self.arrowSize = (self.fontSize)*so.arrowSizeProp
+      self.auxLineOffset = (self.fontSize/2.5)*so.auxLineOffsetProp
+      self.auxLineExtension = (self.fontSize/2.5)*so.auxLineExtensionProp
+      self.dimensionSpacing = (2.0*self.fontSize)*so.dimSpacingProp
+      self.textOffset = (self.fontSize/2.5)*so.textOffsetProp  # offset between symbol and text
     
     #linestyle
     self.auxiliaryLineStyle = inkDraw.lineStyle.set(lineWidth=self.lineWidth,lineColor=self.lineColor)
@@ -248,7 +251,7 @@ class Dimensions(inkBase.inkscapeMadeEasy):
     if self.useLatex:
       pos=[P2[0],P2[1]-self.fontSize*scale/3.0]
     else:
-      contents = contents.replace('\\\\', u'\\n')
+      contents = contents.replace('\\\\', '\\n')
       nLines=len(contents.split('\\n'))
       pos=[P2[0],P2[1]-self.fontSize*scale/3.0 - (nLines-1)*self.fontSize*scale*1.2]
     
@@ -592,10 +595,13 @@ class Dimensions(inkBase.inkscapeMadeEasy):
     
     #inkDraw.line.relCoords(parent, [(0.5*n_vector).tolist()],offset=P1.tolist(), lineStyle=inkDraw.lineStyle.setSimpleBlack(0.5))
     #inkDraw.line.relCoords(parent, [(0.5*t_vector).tolist()],offset=P1.tolist(), lineStyle=inkDraw.lineStyle.setSimpleBlack(0.5))
-    
+        
     # text string 
     if textType=='dimension':
       value=np.linalg.norm(n_vector)
+      
+      value=self.userUnit2unit(value,self.documentUnit)
+              
       valueStr = '%.*f' % (precision, value*scale)
       
       if unit and unit !='none':
