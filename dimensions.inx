@@ -26,13 +26,15 @@
           </param>
 
           <param name="LINunit" type="optiongroup" appearance="minimal" _gui-text="Unit:">
-              <_option value="none">None</_option>
+              <_option value="doc">doc</_option>
               <_option value="mm">mm</_option>
               <_option value="cm">cm</_option>
               <_option value="m">m</_option>
               <_option value="in">in</_option>
               <_option value="ft">ft</_option>
+              <_option value="px">pixel</_option>
           </param>
+          <param name="LINunitSymbol"      type="boolean" _gui-text="Add unit symbol">False</param>
           <param name="LINscaleDim" type="float" min="0.01"    max="100" precision="2"   _gui-text="Dimension scale factor (default: 1.0)">1.0</param>
           <param name="LINprecision"    type="int"   min="0"   max="5"    _gui-text="Digits of precision:">0</param>
           <param name="LINcustomContent" type="string"  _gui-text="Custom contents (only if 'Type>custom'):">value</param>

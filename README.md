@@ -113,9 +113,11 @@ This extension is presented in five tabs, **Linear**, **Angular**, **Arrows**, *
 
 <img src="docs/images/LIN_contents_type.png" width="400px"/>
 
-**Unit:** If you select `Type > Dimension`, this option adds unit to the dimension value. This option will just add the unit and will NOT scale the value.
+**Unit:** If you select `Type > Dimension`, this option selects the unit to the dimension value. The value ``doc`` will use current document unit.
 
 <img src="docs/images/LIN_units.png" width="400px"/>
+
+**Add unit symbol:** If you select `Type > Dimension`, this option adds the selected unit symbol
 
 **Dimension scale factor:** If you select `Type > Dimension`, this option will scale (multiply) the dimension value by the provided number here.
 

@@ -96,6 +96,7 @@ class Dimensions(inkBase.inkscapeMadeEasy):
     self.OptionParser.add_option("--LINsmalDimStyle", action="store", type="inkbool", dest="LINsmalDimStyle", default=False)
     
     self.OptionParser.add_option("--LINunit",action="store", type="string",dest="LINunit", default='none')
+    self.OptionParser.add_option("--LINunitSymbol", action="store", type="inkbool", dest="LINunitSymbol", default=False)
     self.OptionParser.add_option("--LINscaleDim", action="store", type="float", dest="LINscaleDim", default=1.0)
     self.OptionParser.add_option("--LINprecision", action="store", type="int", dest="LINprecision", default=2)
     self.OptionParser.add_option("--LINcustomContent",action="store", type="string",dest="LINcustomContent", default='none')
@@ -143,7 +144,8 @@ class Dimensions(inkBase.inkscapeMadeEasy):
     self.documentUnit = self.getDocumentUnit()
     
     #root_layer = self.current_layer
-    root_layer = self.document.getroot()    
+    #root_layer = self.document.getroot()
+    root_layer = self.getcurrentLayer()
     
     # colors
     [self.textColor,alpha]=inkDraw.color.parseColorPicker(so.textColorOption,so.colorPickerText)
@@ -198,7 +200,7 @@ class Dimensions(inkBase.inkscapeMadeEasy):
           continue
 
         self.drawLinDim(root_layer,[P1,P2],direction=so.LINdirection,label='Dim',invertSide=so.LINinvertSide,textType=so.LINcontentsType,
-                        customText=so.LINcustomContent,unit=so.LINunit,scale=so.LINscaleDim,precision=so.LINprecision,
+                        customText=so.LINcustomContent,unit=so.LINunit,unitSymbol=so.LINunitSymbol,scale=so.LINscaleDim,precision=so.LINprecision,
                         horizontalText=so.LINhorizontalText,invertTextSide=so.LINinvertTextSide,smallDimension=so.LINsmalDimStyle)
         if so.removeAuxLine:
           self.removeElement(element)
@@ -550,7 +552,7 @@ class Dimensions(inkBase.inkscapeMadeEasy):
       inkDraw.text.latex(self,group,valueStr,posDim,fontSize=self.fontSize,refPoint=justif,textColor=self.textColor,LatexCommands=' ',angleDeg=angle)
       
   def drawLinDim(self,parent,points,direction,label='Dim',invertSide=False,textType='dimension',customText='',
-                 unit=None,scale=1.0,precision=2,horizontalText=False,invertTextSide=False,smallDimension=False):
+                 unit=None,unitSymbol=False,scale=1.0,precision=2,horizontalText=False,invertTextSide=False,smallDimension=False):
     """ draws linear dimension
     
     parent: parent object
@@ -561,6 +563,7 @@ class Dimensions(inkBase.inkscapeMadeEasy):
     textType: type of text. values  'dimension' (default), 'custom'
     customText: text to be added. Used only if textType='custom'
     unit: dimmension unit. Used only if textType='dimension'. use None to ignore. Default: None
+    unitSymbol: add unit symbol to the text. Default: False
     scale: scale factor for the dimension. Used only if textType='dimension'. Default: 1.0
     precision: number of decimals. Used only if textType='dimension'
     horizontalText: places text horizontally despite dimension orientation. Default: False
@@ -597,18 +600,24 @@ class Dimensions(inkBase.inkscapeMadeEasy):
     #inkDraw.line.relCoords(parent, [(0.5*t_vector).tolist()],offset=P1.tolist(), lineStyle=inkDraw.lineStyle.setSimpleBlack(0.5))
         
     # text string 
+    
+    if unit == 'doc':
+          unit = self.documentUnit
+          
+          
     if textType=='dimension':
       value=np.linalg.norm(n_vector)
       
-      value=self.userUnit2unit(value,self.documentUnit)
+      value=self.userUnit2unit(value,unit)
               
       valueStr = '%.*f' % (precision, value*scale)
       
-      if unit and unit !='none':
-        if self.useLatex:
-          valueStr='\SI{%s}{%s}' %(valueStr,unit)
-        else:
-          valueStr=valueStr + ' ' + unit
+      if unitSymbol:
+        if unit and unit !='none':
+          if self.useLatex:
+            valueStr='\SI{%s}{%s}' %(valueStr,unit)
+          else:
+            valueStr=valueStr + ' ' + unit
     else:
       valueStr=customText
         
