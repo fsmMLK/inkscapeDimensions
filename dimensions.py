@@ -182,7 +182,7 @@ class Dimensions(inkBase.inkscapeMadeEasy):
     #linestyle
     self.auxiliaryLineStyle = inkDraw.lineStyle.set(lineWidth=self.lineWidth,lineColor=self.lineColor)
 
-    renameMode = 1   # 0: do not create, , 1: overwrite  2: new name
+    renameMode = 2   # 0: do not create, , 1: overwrite  2: new name
     scaleMarker = 'scale (' + str(1.0/self.lineWidth) + ')'  # I have to scale it with respect to the lineWidth since marker's size is associated to width=1.0
     translateMarker ='translate (%s,0)' % self.arrowSize
     markerPath = 'M 0.0,0.0 L %f,%f L %f,%f L 0.0,0.0 z ' % (-self.arrowSize,self.arrowSize*math.tan(10*math.pi/180.0),-self.arrowSize,-self.arrowSize*math.tan(10*math.pi/180.0))
@@ -191,6 +191,7 @@ class Dimensions(inkBase.inkscapeMadeEasy):
     self.dimensionLineStyle = inkDraw.lineStyle.set(lineWidth=self.lineWidth,lineColor=self.lineColor,markerStart=arrowStart,markerEnd=arrowEnd)
     self.dimensionLineStyleSmall = inkDraw.lineStyle.set(lineWidth=self.lineWidth,lineColor=self.lineColor,markerEnd=arrowEnd)
     self.dimensionLineStyleSmall2 = inkDraw.lineStyle.set(lineWidth=self.lineWidth,lineColor=self.lineColor,markerStart=arrowStart)
+    self.annotationLineStyle = inkDraw.lineStyle.set(lineWidth=self.lineWidth*so.anotationScale,lineColor=self.lineColor,markerStart=arrowStart)
       
     if so.tab=='Linear':
       # get points of selected object
@@ -230,14 +231,7 @@ class Dimensions(inkBase.inkscapeMadeEasy):
     nLines: number of lines of text
     scale: scale factor for the whole annotation (text, line width, marker size).  Default:  1.0
     """
-    
-    scaleMarker = 'scale (%f)' % (0.3)
-    translateMarker ='translate (1.2,0)'
-    markerPath = 'M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z'
-    arrowStart = inkDraw.marker.createMarker(self,'AnnArrow_Start',markerPath,RenameMode=1,strokeColor=None,fillColor=self.lineColor,markerTransform=translateMarker + scaleMarker )
-      
-    self.annotationLineStyle = inkDraw.lineStyle.set(lineWidth=self.lineWidth*scale,lineColor=self.lineColor,markerStart=arrowStart)
-    
+        
     group = self.createGroup(parent,label)
     
     [P1,P2,P3] = self.getPoints(auxElement)
