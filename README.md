@@ -190,13 +190,19 @@ This extension is presented in five tabs, **Linear**, **Angular**, **Arrows**, *
 
 **Remove auxiliary line:** If selected, the auxiliary line used to create the annotations is deleted
 
+**Linear dimension marker style:** Selects the style of the marker for linear dimensions. This options does not
+ affect angular and arrow annotations
+ 
+<img src="docs/images/LIN_marker_type.png" width="700px"/>
+
 **Font size:** Adjusts the font size (h)
 
 **Default proportions:** If selected, the proportions between the elements of the dimension annotations follows the default proportions. See figure below. If selected, the other parameters below it will be ignored.
 
-<img src="docs/images/Config_sizes.png" width="700px"/>
+<img src="docs/images/Config_sizes.png" width="800px"/>
 
-**Line width proportion, Arrow size proportion, Aux. line offset proportion, Aux. line extension proportion, Text offset proportion, Dimension distance proportion:** Change the proportions of the annotation. They affect the outcome only if `Default proportions` is NOT selected.
+**Line width proportion, marker size proportion, Aux. line offset proportion, Aux. line extension proportion, Text
+ offset proportion, Dimension distance proportion:** Change the proportions of the annotation. They affect the outcome only if `Default proportions` is NOT selected.
 
   - If this value is 1.0, then the size of the element follows the proportions presented in the figure above. Ex: `w=0.1*h`
   - If this value is different than 1.0, the size will be modified by multiplying if by this factor. Example: If `Line width proportion=1.5`, then `w=1.5*(0.1*h)`

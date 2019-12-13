@@ -77,13 +77,17 @@ Tip: Use \\ to break lines
         <page name="Config" appearance="minimal" _gui-text="Configuration">
           <param name="useLatex"      type="boolean" _gui-text="Use LaTeX:">False</param>
           <param name="removeAuxLine"      type="boolean" _gui-text="Remove auxiliary line:">False</param>
-          
+          <param name="markerStyle" type="optiongroup" appearance="minimal" _gui-text="Linear dimension marker style:">
+              <_option value="arrow">Arrow</_option>
+              <_option value="circle">Circle</_option>
+              <_option value="serif">Serif</_option>
+          </param>
           <param name="desc1" type="description" appearance="header">Dimensions</param>
           <param name="fontSize" type="float" min="1"    max="50" precision="1"   _gui-text="Font size  (default: 2.5)">10</param>
           <param name="useDefaultProp"    type="boolean" _gui-text="Default proportions (ignore next options)">True</param>
           
           <param name="lineWidthProp" type="float" min="0.1"    max="10" precision="1"   _gui-text="Line width proportion (default: 1.0)">1.0</param>
-          <param name="arrowSizeProp" type="float" min="0.1"    max="10" precision="1"   _gui-text="Arrow size proportion (default: 1.0)">1.0</param>
+          <param name="arrowSizeProp" type="float" min="0.1"    max="10" precision="1"   _gui-text="Marker size proportion (default: 1.0)">1.0</param>
           <param name="auxLineOffsetProp" type="float" min="0.1"    max="10" precision="1"   _gui-text="Aux. line offset proportion (default: 1.0)">1.0</param>
           <param name="auxLineExtensionProp" type="float" min="0.1"    max="10" precision="1"   _gui-text="Aux. line extension proportion (default: 1.0)">1.0</param>
           <param name="textOffsetProp" type="float" min="0.1"    max="10" precision="1"   _gui-text="Text offset proportion (default: 1.0)">1.0</param>
