@@ -27,7 +27,6 @@ inkscape/extensions/
             |-- textextLib
             |   |-- __init__.py
             |   |-- basicLatexPackages.tex
-            |   |-- CircuitSymbolsLatexPreamble.tex      <-- add this file to  textextLib  subdirectoy
             |   |-- textext.inx
             |   |-- textext.py
             |
