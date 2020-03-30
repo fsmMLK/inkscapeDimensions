@@ -32,14 +32,6 @@ inkscape/extensions/
             |   |-- textext.py
             |
             |-- dimensions.py
-            |-- drawAmpOp.py 
-            |-- drawArrows.py
-            |-- drawDiodes.py
-            |-- drawRLC.py
-            |-- drawSignals.py
-            |-- drawSources.py
-            |-- drawSwitches.py
-            |-- drawTransistors.py
             `-- dimensions.inx
 ```
 
