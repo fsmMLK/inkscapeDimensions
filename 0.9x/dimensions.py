@@ -656,6 +656,12 @@ class Dimensions(inkBase.inkscapeMadeEasy):
         if textType == 'dimension':
             value = np.linalg.norm(n_vector)
 
+            # ssss
+            # doc_scale = self.getDocumentScaleFactor()
+            # value = self.unit2unit(value, self.documentUnit, unit) / doc_scale
+            # ssss
+
+
             value = self.userUnit2unit(value, unit)
 
             valueStr = '%.*f' % (precision, value * scale)
