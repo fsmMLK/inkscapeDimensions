@@ -103,7 +103,6 @@ Installation procedures for latest and older versions are described below.
               ┗━━ dimensions.py         <--
         ```
 
-
 # Usage
 
 The extension can be found under `extensions > fsmMLK` menu.

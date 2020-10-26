@@ -16,15 +16,15 @@
                     </param>
                     <hbox>
                         <vbox>
-                            <param name="LINinvertSide" type="bool" gui-text="Invert side">False</param>
-                            <param name="LINinvertTextSide" type="bool" gui-text="Invert text side">False</param>
+                            <param name="LINinvertSide" type="bool" gui-text="Invert side">false</param>
+                            <param name="LINinvertTextSide" type="bool" gui-text="Invert text side">false</param>
                         </vbox>
                         <spacer/>
                         <separator/>
                         <spacer/>
                         <vbox>
-                            <param name="LINhorizontalText" type="bool" gui-text="Keep text horizontal">False</param>
-                            <param name="LINsmalDimStyle" type="bool" gui-text="Small dimension style">False</param>
+                            <param name="LINhorizontalText" type="bool" gui-text="Keep text horizontal">false</param>
+                            <param name="LINsmalDimStyle" type="bool" gui-text="Small dimension style">false</param>
                         </vbox>
                     </hbox>
                     <label appearance="header">Text contents</label>
@@ -41,7 +41,7 @@
                             </param>
                             <param name="LINscaleDim" type="float" min="0.01" max="100" precision="2" gui-text="Sale factor¹:">1.0</param>
                             <param name="LINprecision" type="int" min="0" max="5" gui-text="Digits of precision:">0</param>
-                            <param name="LINunitSymbol" type="bool" gui-text="Add unit symbol">False</param>
+                            <param name="LINunitSymbol" type="bool" gui-text="Add unit symbol">false</param>
                         </page>
                         <page name="custom" appearance="minimal" gui-text="Custom">
                             <param name="LINcustomContent" type="string" appearance="multiline" gui-text="Contents:">value</param>
@@ -60,16 +60,16 @@
                     <param name="ANGannotationDistance" type="int" min="0" max="100" gui-text="Annotation distance² (%):">50</param>
                     <hbox>
                         <vbox>
-                            <param name="ANGmarkCenter" type="bool" gui-text="Add center mark">False</param>
-                            <param name="ANGinvertAngle" type="bool" gui-text="Explementary angle">False</param>
-                            <param name="ANGinvertTextSide" type="bool" gui-text="Invert text side">False</param>
+                            <param name="ANGmarkCenter" type="bool" gui-text="Add center mark">false</param>
+                            <param name="ANGinvertAngle" type="bool" gui-text="Explementary angle">false</param>
+                            <param name="ANGinvertTextSide" type="bool" gui-text="Invert text side">false</param>
                         </vbox>
                         <spacer/>
                         <separator/>
                         <spacer/>
                         <vbox>
-                            <param name="ANGhorizontalText" type="bool" gui-text="Keep text horizontal">False</param>
-                            <param name="ANGsmalDimStyle" type="bool" gui-text="Small dimension style">False</param>
+                            <param name="ANGhorizontalText" type="bool" gui-text="Keep text horizontal">false</param>
+                            <param name="ANGsmalDimStyle" type="bool" gui-text="Small dimension style">false</param>
                         </vbox>
                     </hbox>
                     <label appearance="header">Text contents</label>
@@ -96,8 +96,8 @@
             <param name="anotationText" type="string" appearance="multiline" gui-text="Contents:">value</param>
         </page>
         <page name="Config" appearance="minimal" gui-text="Configuration">
-            <param name="useLatex" type="bool" gui-text="Use LaTeX">False</param>
-            <param name="removeAuxLine" type="bool" gui-text="Remove auxiliary line">False</param>
+            <param name="useLatex" type="bool" gui-text="Use LaTeX">false</param>
+            <param name="removeAuxLine" type="bool" gui-text="Remove auxiliary line">false</param>
             <label appearance="header">Colors</label>
             <hbox>
                 <param name="textColor" type="optiongroup" appearance="combo" gui-text="Text color:">
@@ -121,7 +121,7 @@
                     <option value="Dmagen">Dmagenta</option>
                     <option value="picker">use color picker</option>
                 </param>
-                <param name="colorPickerText" type="color" appearance="colorbutton" gui-text=""/>
+                <param name="colorPickerText" type="color" appearance="colorbutton" gui-text=" "/>
             </hbox>
             <hbox>
                 <param name="lineColor" type="optiongroup" appearance="combo" gui-text="Line color:">
@@ -145,7 +145,7 @@
                     <option value="Dmagen">Dmagenta</option>
                     <option value="picker">use color picker</option>
                 </param>
-                <param name="colorPickerLine" type="color" appearance="colorbutton" gui-text=""/>
+                <param name="colorPickerLine" type="color" appearance="colorbutton" gui-text=" "/>
             </hbox>
         </page>
         <page name="MarkerSizes" appearance="minimal" gui-text="Style">
@@ -156,7 +156,7 @@
             </param>
             <label appearance="header">Marker sizes</label>
             <param name="fontSize" type="float" min="1" max="50" precision="1" gui-text="Font size  (default: 2.5)">10</param>
-            <param name="useDefaultProp" type="bool" gui-text="Default proportions (ignore next options)">True</param>
+            <param name="useDefaultProp" type="bool" gui-text="Default proportions (ignore next options)">true</param>
 
             <param name="lineWidthProp" type="float" min="0.1" max="10" precision="1" gui-text="Line width proportion¹:">1.0</param>
             <param name="arrowSizeProp" type="float" min="0.1" max="10" precision="1" gui-text="Marker size proportion¹:">1.0</param>
