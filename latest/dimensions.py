@@ -228,7 +228,8 @@ class Dimensions(inkBase.inkscapeMadeEasy):
             # get points of selected object
             for id, element in self.svg.selected.items():
                 [P1, P2] = self.getPointsLinDim(element, so.LINdirection)
-                if not P1 or not P2:
+
+                if P1 is None or P2 is None:
                     continue
 
                 self.drawLinDim(root_layer, [P1, P2], direction=so.LINdirection, label='Dim', invertSide=so.LINinvertSide,
@@ -831,17 +832,19 @@ class Dimensions(inkBase.inkscapeMadeEasy):
           - pointsList: list of points with the coordinates
         :rtype: list of list
 
-        If the element does not have any transformation attribute, this function returns:
-            transfAttrib=''
-            transfMatrix=identity matrix
-
         **Example**
 
         >>> for id_elem,element in self.selected.iteritems():                # iterates through all selected elements
         >>>   pointsList = self.getPointsLinDim(self,element,'horizontal')
         """
 
-        [P1, P2] = self.getPoints(element)
+        listPoints = self.getPoints(element)
+
+        if len(listPoints)!=2:
+            return [None,none]
+        else:
+            P1=listPoints[0]
+            P2=listPoints[1]
 
         # sets the position to the viewport center
         position = self.getCenter(element)
