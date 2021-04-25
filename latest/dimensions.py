@@ -150,8 +150,8 @@ class Dimensions(inkBase.inkscapeMadeEasy):
         root_layer = self.getcurrentLayer()
 
         # colors
-        [self.textColor, alpha] = inkDraw.color.parseColorPicker(so.textColorOption, so.colorPickerText)
-        [self.lineColor, alpha] = inkDraw.color.parseColorPicker(so.lineColorOption, so.colorPickerLine)
+        self.textColor = inkDraw.color.parseColorPicker(so.textColorOption, so.colorPickerText)
+        self.lineColor = inkDraw.color.parseColorPicker(so.lineColorOption, so.colorPickerLine)
 
         # text size and font style
         if not inkDraw.useLatex:
