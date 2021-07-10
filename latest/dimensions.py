@@ -841,7 +841,7 @@ class Dimensions(inkBase.inkscapeMadeEasy):
         listPoints = self.getPoints(element)
 
         if len(listPoints)!=2:
-            return [None,none]
+            return [None,None]
         else:
             P1=listPoints[0]
             P2=listPoints[1]
