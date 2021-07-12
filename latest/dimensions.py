@@ -138,6 +138,8 @@ class Dimensions(inkBase.inkscapeMadeEasy):
         self.arg_parser.add_argument("--lineColor", type=str, dest="lineColorOption", default='black')
         self.arg_parser.add_argument("--colorPickerLine", type=str, dest="colorPickerLine", default='0')
 
+        self.arg_parser.add_argument("--dimensionType", type=str, dest="dimensionType", default='Linear')     
+
     def effect(self):
 
         so = self.options
@@ -224,7 +226,7 @@ class Dimensions(inkBase.inkscapeMadeEasy):
         self.annotationLineStyle = inkDraw.lineStyle.set(lineWidth=self.lineWidth * so.anotationScale, lineColor=self.lineColor,
                                                          markerStart=arrowStart)
 
-        if so.tab == 'Linear':
+        if self.options.dimensionType == 'Linear':
             # get points of selected object
             for id, element in self.svg.selected.items():
                 [P1, P2] = self.getPointsLinDim(element, so.LINdirection)
@@ -239,7 +241,7 @@ class Dimensions(inkBase.inkscapeMadeEasy):
                 if so.removeAuxLine:
                     self.removeElement(element)
 
-        if so.tab == 'Angular':
+        if self.options.dimensionType == 'Angular':
             # get points of selected object
             for id, element in self.svg.selected.items():
                 self.drawAngDim(root_layer, element, label='Dim', invertAngle=so.ANGinvertAngle, textType=so.AngContents_subtab,
@@ -249,7 +251,7 @@ class Dimensions(inkBase.inkscapeMadeEasy):
                 if so.removeAuxLine:
                     self.removeElement(element)
 
-        if so.tab == 'Arrow':
+        if self.options.dimensionType == 'Arrow':
             for id, element in self.svg.selected.items():
                 self.drawAnnotationArrow(root_layer, element, contents=so.anotationText, scale=so.anotationScale)
                 self.removeElement(element)
