@@ -306,10 +306,10 @@ class Dimensions(inkBase.inkscapeMadeEasy):
         invertAngle: selects the complementary angle
         textType: type of text. values  'dimension' (default), 'custom'
         customText: text to be added. Used only if textType='custom'
-        unit: dimmension unit. 'deg', 'rad', 'radPi'. Default: deg
+        unit: dimension unit. 'deg', 'rad', 'radPi'. Default: deg
         precision: number of decimals. Used only if textType='dimension'
         horizontalText: places text horizontally despite dimension orientation. Default: False
-        invertTextSide: invert text placement (above, below the dimmension line
+        invertTextSide: invert text placement (above, below the dimension line
         markCenter: creates a mark at the center point
         dimPosition: position of the annotation arrow.  'interior', 'exterior'
         dimDistance: Distance along the segments where the dimension arrow will be placed.
@@ -587,12 +587,12 @@ class Dimensions(inkBase.inkscapeMadeEasy):
         points: list of points [P1,P2]
         direction: dimension direction. values: 'vertical','horizontal','parallel'
         label: label of the object (it can be repeated)
-        invertSide: invert side of the dimmension annotation.
+        invertSide: invert side of the dimension annotation.
                     False (default): above(horiz./paral.),left (vert.)
                     True: below(horiz./paral.),right (vert.)
         textType: type of text. values  'dimension' (default), 'custom'
         customText: text to be added. Used only if textType='custom'
-        unit: dimmension unit. Used only if textType='dimension'. use None to ignore. Default: None
+        unit: dimension unit. Used only if textType='dimension'. use None to ignore. Default: None
         unitSymbol: add unit symbol to the text. Default: False
         scale: scale factor for the dimension. Used only if textType='dimension'. Default: 1.0
         precision: number of decimals. Used only if textType='dimension'
