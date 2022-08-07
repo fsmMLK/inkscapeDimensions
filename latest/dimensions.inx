@@ -39,7 +39,7 @@
                                 <option value="ft">ft</option>
                                 <option value="px">pixel</option>
                             </param>
-                            <param name="LINscaleDim" type="float" min="0.01" max="100" precision="2" gui-text="Sale factor¹:">1.0</param>
+                            <param name="LINscaleDim" type="float" min="0.01" max="10000" precision="2" gui-text="Sale factor¹:">1.0</param>
                             <param name="LINprecision" type="int" min="0" max="5" gui-text="Digits of precision:">0</param>
                             <param name="LINunitSymbol" type="bool" gui-text="Add unit symbol">false</param>
                         </page>
@@ -154,7 +154,7 @@
                 <param name="colorPickerLine" type="color" appearance="colorbutton" gui-text=" "/>
             </hbox>
         </page>
-        <page name="MarkerSizes" appearance="minimal" gui-text="Sizing">
+        <page name="Sizing" appearance="minimal" gui-text="Sizing">
             <param name="fontSize" type="float" min="1" max="50" precision="1" gui-text="Font size  (default: 2.5)">10</param>
             <param name="useDefaultProp" type="bool" gui-text="Default proportions (ignore next options)">true</param>
 
