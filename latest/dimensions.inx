@@ -49,6 +49,8 @@
                     </param>
                 </vbox>
             </hbox>
+            <spacer size="expand"/>
+            <label>¹ default: 1.0.</label>
         </page>
         <page name="Angular" appearance="minimal" gui-text="Angular">
             <hbox>
@@ -94,6 +96,8 @@
         <page name="Arrow" appearance="minimal" gui-text="Arrows">
             <param name="anotationScale" type="float" min="0.01" max="100" precision="2" gui-text="Scale factor¹:">1.0</param>
             <param name="anotationText" type="string" appearance="multiline" gui-text="Contents:">value</param>
+            <spacer size="expand"/>
+            <label>¹ default: 1.0.</label>
         </page>
         <page name="Config" appearance="minimal" gui-text="Configuration">
             <param name="useLatex" type="bool" gui-text="Use LaTeX">false</param>
@@ -170,7 +174,11 @@
             <label appearance="url">https://github.com/fsmMLK/inkscapeDimensions</label>
         </page>
     </param>
-    <label>¹ default: 1.0.</label>
+    <param name="dimensionType" type="optiongroup" appearance="combo" gui-text="Type:">
+        <option value="Linear">Linear</option>
+        <option value="Angular">Angular</option>
+        <option value="Arrow">Arrow</option>
+    </param>
     <effect>
         <object-type>all</object-type>
         <effects-menu>
