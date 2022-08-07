@@ -267,6 +267,13 @@ In this tab you can create annotation arrows with text. See images below.
 **Remove auxiliary line:** If selected, the auxiliary line used to create the annotations is deleted.
 
 
+### Syle section
+
+**Linear dimension marker style:** Selects the style of the marker for linear dimensions. This options does not
+ affect angular and arrow annotations.
+ 
+<img src="docs/images/LIN_marker_type.png" width="500px"/>
+
 ### Color section
 
 This section controls the color of the auxiliary lines and text off all annotations.
@@ -282,16 +289,12 @@ In both cases, you have three options in the `Color` drop down menu:
   - You can select **use color picker** to choose the color from the color picker widget just to the right of the drop down menu. **Attention:** the color selected in the color picker widget will be considered **ONLY** if you select **use color picker** in the drop down menu. 
 
 
-## Style tab
+## Sizing tab
 
 Here you can adjust the proportions of the annotations.
 
-<img src="docs/images/Tab_style.png" width="450px"/>
+<img src="docs/images/Tab_sizing.png" width="450px"/>
 
-**Linear dimension marker style:** Selects the style of the marker for linear dimensions. This options does not
- affect angular and arrow annotations.
- 
-<img src="docs/images/LIN_marker_type.png" width="500px"/>
 
 **Font size:** Adjusts the font size (h). Please keep in mind that all the proportions of the annotations refer to the font size. See image below.
 

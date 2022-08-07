@@ -98,6 +98,12 @@
         <page name="Config" appearance="minimal" gui-text="Configuration">
             <param name="useLatex" type="bool" gui-text="Use LaTeX">false</param>
             <param name="removeAuxLine" type="bool" gui-text="Remove auxiliary line">false</param>
+            <label appearance="header">Style</label>
+            <param name="markerStyle" type="optiongroup" appearance="combo" gui-text="Linear dimension marker style:">
+                <option value="arrow">Arrow</option>
+                <option value="circle">Circle</option>
+                <option value="serif">Serif</option>
+            </param>
             <label appearance="header">Colors</label>
             <hbox>
                 <param name="textColor" type="optiongroup" appearance="combo" gui-text="Text color:">
@@ -148,13 +154,7 @@
                 <param name="colorPickerLine" type="color" appearance="colorbutton" gui-text=" "/>
             </hbox>
         </page>
-        <page name="MarkerSizes" appearance="minimal" gui-text="Style">
-            <param name="markerStyle" type="optiongroup" appearance="combo" gui-text="Linear dimension marker style:">
-                <option value="arrow">Arrow</option>
-                <option value="circle">Circle</option>
-                <option value="serif">Serif</option>
-            </param>
-            <label appearance="header">Marker sizes</label>
+        <page name="MarkerSizes" appearance="minimal" gui-text="Sizing">
             <param name="fontSize" type="float" min="1" max="50" precision="1" gui-text="Font size  (default: 2.5)">10</param>
             <param name="useDefaultProp" type="bool" gui-text="Default proportions (ignore next options)">true</param>
 

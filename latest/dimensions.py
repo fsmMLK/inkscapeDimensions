@@ -320,6 +320,10 @@ class Dimensions(inkBase.inkscapeMadeEasy):
 
         listPoints = self.getPoints(auxElem)
 
+        if len(listPoints) != 3 and len(listPoints) != 4:
+            self.displayMsg('ERROR: Line segment is composed by %d vertices. It must contain 3 or 4 vertices' % len(listPoints))
+            return
+
         if len(listPoints) == 3:
             auxElemType = '3points'
             segment1 = lineSegment(listPoints[1], listPoints[0])
@@ -842,6 +846,7 @@ class Dimensions(inkBase.inkscapeMadeEasy):
         listPoints = self.getPoints(element)
 
         if len(listPoints)!=2:
+            self.displayMsg('ERROR: Line segment is composed by %d vertices. It must contain 2 vertices' % len(listPoints))
             return [None,None]
         else:
             P1=listPoints[0]
