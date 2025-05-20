@@ -33,7 +33,7 @@ def getPosArc(versor1, versor2, deltaTheta1=None, deltaTheta2=None, flagInside=T
         self.displayMsg('The two deltaThetas cannot be simultaneously not None! Quitting...')
         return []
 
-    mat_A = np.row_stack((versor1, versor2))
+    mat_A = np.vstack((versor1, versor2))
     if abs(np.linalg.det(mat_A)) < 1e-9:
         if theta < 0.1:
             if deltaTheta2 is None:
